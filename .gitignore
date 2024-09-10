@@ -1,0 +1,40 @@
+# Arquivos de bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Diretórios de build e distribuição
+build/
+dist/
+*.egg-info/
+
+# Ambientes virtuais
+venv/
+.env/
+
+# Dependências e cache de pacotes
+Pipfile.lock
+*.lock
+*.nox/
+.tox/
+.hypothesis/
+
+# Arquivos de configuração do ambiente
+.env
+.env.*
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+.coverage
+
+# IDEs e editores
+.vscode/
+.idea/
+.spyderproject
+.ropeproject
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
