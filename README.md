@@ -143,22 +143,41 @@ This project is a simple Django project that demonstrates the basic concepts of 
 
 ## Installation guide
 
-1. Clone the repository
+1. Initialize a environment
+
+   You can create a virtual environment using the following command:
 
    ```bash
-   git clone
+   python -m venv venv
    ```
 
-2. Install the dependencies
+2. Activate the environment
+
+   You can activate the virtual environment using the following command:
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+3. Install the dependencies
 
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Run the Django project
+4. Apply the migrations
+
+   You need to apply the migrations to create the database schema:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+4. Run the Django project
 
    ```bash
    python manage.py runserver
    ```
 
-4. Visit `http://127.0.0.1:8000/home` in your browser to see the output of the view.
+5. Visit `http://127.0.0.1:8000/home` in your browser to see the output of the view.
+
