@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products list</title>
+    <style>
+      ul > li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+
+    <a href="/create">Create new product</a>
+
+    {% if status == '1' %}
+    <div style="display: flex; margin: 20px 0">
+      <p style="color: green; margin: 0 4px 0 0">
+        Product created successfully!
+      </p>
+      <button onclick="this.parentElement.style.display='none';">
+        Dismiss
+      </button>
+    </div>
+    {% endif %}
+
+    <h2>Products list</h2>
+
+    <ul>
+      {% if products %} {% for product in products %}
+      <li>
+        <span><b>Name:</b></span> {{ product.name }} <br />
+        <span><b>Price:</b></span> {{ product.price }} <br />
+        {% if product.description %}
+        <span><b>Description:</b></span>
+        {{ product.description }} <br />
+        {% endif %}
+      </li>
+      {% endfor %} {% else %}
+      <li>No products found</li>
+      {% endif %}
+    </ul>
+  </body>
+</html>

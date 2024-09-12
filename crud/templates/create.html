@@ -1,0 +1,45 @@
+<h1>Welcome!</h1>
+
+{% if error %}
+  <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+<h2>Create new product</h2>
+
+<form action="{% url 'create_product' %}" method="post">
+  {% csrf_token %}
+  <label for="product_name">Name:</label>
+  <br />
+  <input type="text" name="product_name" id="product_name" placeholder="Name" />
+
+  <br />
+  <br />
+
+  <label for="product_description">Description:</label>
+  <br />
+  <input
+    type="text"
+    name="product_description"
+    id="product_description"
+    placeholder="Description"
+  />
+
+  <br />
+  <br />
+
+  <label for="product_price">Price:</label>
+  <br />
+  <input
+    type="text"
+    name="product_price"
+    id="product_price"
+    placeholder="Price"
+  />
+  <br />
+  <span>E.g.: 1234.56</span>
+
+  <br /> <br />
+
+  <input type="submit" value="Submit" />
+</form>
+<hr />
