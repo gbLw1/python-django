@@ -26,81 +26,81 @@ This project is a simple Django project that demonstrates the basic concepts of 
 
 1. Install Django
 
-   ```bash
-   pip install django
-   ```
+    ```bash
+    pip install django
+    ```
 
 2. Create a Django project
 
-   ```bash
-   django-admin startproject <project_name>
-   ```
+    ```bash
+    django-admin startproject <project_name>
+    ```
 
-   `project_name` is the name of the project you want to create.
+    `project_name` is the name of the project you want to create.
 
 3. Run the Django project
 
-   ```bash
-   python manage.py runserver
-   ```
+    ```bash
+    python manage.py runserver
+    ```
 
 4. Create a Django app
 
-   ```bash
-   python manage.py startapp <app_name>
-   ```
+    ```bash
+    python manage.py startapp <app_name>
+    ```
 
-   `app_name` is the name of the app you want to create.
+    `app_name` is the name of the app you want to create.
 
 5. Update the `INSTALLED_APPS` in `settings.py`
 
-   Make sure to add the app to the `INSTALLED_APPS` in the `settings.py` file like this:
+    Make sure to add the app to the `INSTALLED_APPS` in the `settings.py` file like this:
 
-   ```python
-   INSTALLED_APPS = [
-       ...
-       '<app_name>',
-   ]
-   ```
+    ```python
+    INSTALLED_APPS = [
+        ...
+        '<app_name>',
+    ]
+    ```
 
 6. Create a model
 
-   Define the model in the `models.py` file of the app you created.
+    Define the model in the `models.py` file of the app you created.
 
-   ```python
-   from django.db import models
+    ```python
+    from django.db import models
 
-   class ModelName(models.Model):
-       field_name = models.CharField(max_length=100)
-       ...
-   ```
+    class ModelName(models.Model):
+        field_name = models.CharField(max_length=100)
+        ...
+    ```
 
 7. Create a migration
 
-   Run the following command to create a migration for the model you created:
+    Run the following command to create a migration for the model you created:
 
-   ```bash
-   python manage.py makemigrations
-   ```
+    ```bash
+    python manage.py makemigrations
+    ```
 
 8. Apply the migration
 
-   Run the following command to apply the migration to the database:
+    Run the following command to apply the migration to the database:
 
-   ```bash
-   python manage.py migrate
-   ```
+    ```bash
+    python manage.py migrate
+    ```
 
 9. Create a view
 
-   Define the view in the `views.py` file of the app you created.
+    Define the view in the `views.py` file of the app you created.
 
-   ```python
-   from django.http import HttpResponse
+    ```python
+    from django.http import HttpResponse
 
-   def view_name(request):
-       return HttpResponse("Hello, World!")
-   ```
+    def view_name(request):
+        return HttpResponse("Hello, World!")
+    ```
 
 10. Create a URL pattern
 
@@ -145,39 +145,45 @@ This project is a simple Django project that demonstrates the basic concepts of 
 
 1. Initialize a environment
 
-   You can create a virtual environment using the following command:
+    You can create a virtual environment using the following command:
 
-   ```bash
-   python -m venv venv
-   ```
+    ```bash
+    python -m venv venv
+    ```
 
 2. Activate the environment
 
-   You can activate the virtual environment using the following command:
+    You can activate the virtual environment using the following command:
 
-   ```bash
-   source venv/bin/activate
-   ```
+    Linux/Mac:
+    ```bash
+    source venv/bin/activate
+    ```
+
+    Windows:
+    ```bash
+    venv\Scripts\activate
+    ```
 
 3. Install the dependencies
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 4. Apply the migrations
 
-   You need to apply the migrations to create the database schema:
+    You need to apply the migrations to create the database schema:
 
-   ```bash
-   python manage.py migrate
-   ```
+    ```bash
+    python manage.py migrate
+    ```
 
 4. Run the Django project
 
-   ```bash
-   python manage.py runserver
-   ```
+    ```bash
+    python manage.py runserver
+    ```
 
 5. Visit `http://127.0.0.1:8000/home` in your browser to see the output of the view.
 
