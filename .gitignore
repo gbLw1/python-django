@@ -38,3 +38,6 @@ Pipfile.lock
 # Arquivos de sistema
 .DS_Store
 Thumbs.db
+
+# Arquivos de banco de dados
+*.sqlite3
