@@ -141,6 +141,32 @@ This project is a simple Django project that demonstrates the basic concepts of 
 
 ---
 
+## Unit testing in Django
+
+1. Create a test case
+
+    Create a test case in the `tests.py` file of the app you created.
+
+    ```python
+    from django.test import TestCase
+
+    class TestModel(TestCase):
+        def test_model(self):
+            self.assertEqual(1, 1)
+    ```
+
+2. Run the tests
+
+    Run the tests using the following command:
+
+    ```bash
+    python manage.py test
+    ```
+
+    This will run all the test cases in the project and display the results.
+
+---
+
 ## Installation guide
 
 1. Initialize a environment
