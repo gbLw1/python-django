@@ -2,7 +2,9 @@ from typing import Optional
 from .models import Product
 
 
-def validate_product_data(name: Optional[str], price: Optional[str]) -> Optional[str]:
+def validate_product_data(
+    verb: str, name: Optional[str], price: Optional[str]
+) -> Optional[str]:
     if not name:
         return "Name is required!"
 
@@ -15,7 +17,7 @@ def validate_product_data(name: Optional[str], price: Optional[str]) -> Optional
     if converted_price <= 0:
         return "Price must be a positive number!"
 
-    if Product.objects.filter(name=name).exists():
+    if verb.lower() == "post" and Product.objects.filter(name=name).exists():
         return "Product already exists!"
 
     return None

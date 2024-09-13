@@ -1,0 +1,61 @@
+<h1>Welcome!</h1>
+
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %} {% if messages %}
+<div style="display: flex; margin: 20px 0">
+  {% for message in messages %}
+  <p style="color: red; margin: 0 4px 0 0">{{ message }}</p>
+  {% endfor %}
+  <button onclick="this.parentElement.style.display='none';">Dismiss</button>
+</div>
+{% endif %}
+
+<h2>Updating product: {{ product.name }}</h2>
+
+<form action="{% url 'update_product' product.id %}" method="post">
+  {% csrf_token %}
+  <label for="product_name">Name:</label>
+  <br />
+  <input
+    type="text"
+    name="product_name"
+    id="product_name"
+    placeholder="Name"
+    value="{{ product.name }}"
+  />
+
+  <br />
+  <br />
+
+  <label for="product_description">Description:</label>
+  <br />
+  <input
+    type="text"
+    name="product_description"
+    id="product_description"
+    placeholder="Description"
+    value="{{ product.description }}"
+  />
+
+  <br />
+  <br />
+
+  <label for="product_price">Price:</label>
+  <br />
+  <input
+    type="text"
+    name="product_price"
+    id="product_price"
+    placeholder="Price"
+    value="{{ product.price }}"
+  />
+  <br />
+  <span>E.g.: 1234.56</span>
+
+  <br />
+  <br />
+
+  <input type="submit" value="Submit" />
+</form>
+<hr />

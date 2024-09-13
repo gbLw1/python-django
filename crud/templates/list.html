@@ -16,11 +16,18 @@
 
     <a href="/create">Create new product</a>
 
-    {% if status == '1' %}
+    {% if messages %}
     <div style="display: flex; margin: 20px 0">
-      <p style="color: green; margin: 0 4px 0 0">
-        Product created successfully!
+      {% for message in messages %}
+      <p
+        style="
+            color: {% if message.tags == 'error' %}red{% else %}green{% endif %};
+            margin: 0 4px 0 0;
+        "
+      >
+        {{ message }}
       </p>
+      {% endfor %}
       <button onclick="this.parentElement.style.display='none';">
         Dismiss
       </button>
@@ -38,6 +45,16 @@
         <span><b>Description:</b></span>
         {{ product.description }} <br />
         {% endif %}
+        <a
+          stlye="margin-right: 10px; color: blue;"
+          href="/update/{{ product.id }}"
+          >Edit</a
+        >
+        <a
+          style="color: red"
+          href="/delete/{{ product.id }}"
+          >Delete</a
+        >
       </li>
       {% endfor %} {% else %}
       <li>No products found</li>
